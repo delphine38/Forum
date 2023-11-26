@@ -6,12 +6,12 @@ require('actions/database.php');
 
 if(isset($_POST['validate'])){
 
-    if(!empty($_POST['pseudo']) AND !empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password'])){
+    if(!empty($_POST['pseudo']) AND !empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['mdp'])){
 
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
-        $user_lastname = htmlspecialchars($_POST['lastname']);
-        $user_firstname = htmlspecialchars($_POST['firstname']);
-        $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $user_lastname = htmlspecialchars($_POST['nom']);
+        $user_firstname = htmlspecialchars($_POST['prenom']);
+        $user_password = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
         $checkIfUserAlreadyExists =$bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
         $checkIfUserAlreadyExists->execute(array($user_pseudo));
@@ -26,7 +26,7 @@ if(isset($_POST['validate'])){
 
     }else{
         $errorMsg = "Veuillez complétez tous les champs";
-        var_dump($errorMsg);
+        //var_dump($errorMsg);
     }
 
 

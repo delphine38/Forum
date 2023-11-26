@@ -18,15 +18,15 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="lastname">
+            <input type="text" class="form-control" name="nom">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Prénom</label>
-            <input type="text" class="form-control" name="firstname">
+            <input type="text" class="form-control" name="prenom">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Mot de pass</label>
-            <input type="password" class="form-control" name="password">
+            <input type="password" class="form-control" name="mdp">
         </div>
         
         <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
