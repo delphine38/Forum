@@ -7,7 +7,7 @@
 
 <body>    
     <br><br>
-    <form class="container" methode="POST">
+    <form class="container" method="POST">
 
 
     <?php if(isset($errorMsg)){echo '<p>' .$errorMsg.'</p>';}?>
@@ -25,7 +25,7 @@
             <input type="text" class="form-control" name="prenom">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Mot de pass</label>
+            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" name="mdp">
         </div>
         
