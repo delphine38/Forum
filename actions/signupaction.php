@@ -7,13 +7,14 @@ require('actions/database.php');
 if(isset($_POST['validate'])){
 
     //vérifier si user à compléter tout les champs
-    if(!empty($_POST['pseudo']) AND !empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['mdp'])){
+   // if(!empty($_POST['pseudo']) AND !empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['mdp'])){
+    if(!empty($_POST['pseudo']) AND !empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password'])){
 
         //les données que l'user entre
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
-        $user_lastname = htmlspecialchars($_POST['nom']);
-        $user_firstname = htmlspecialchars($_POST['prenom']);
-        $user_password = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+        $user_lastname = htmlspecialchars($_POST['lastname']);
+        $user_firstname = htmlspecialchars($_POST['firstname']);
+        $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         //vérification si l'user existe déjà en bdd
         $checkIfUserAlreadyExists =$bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
@@ -26,7 +27,7 @@ if(isset($_POST['validate'])){
             $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password));
 
             //récuperer les informations de user
-            $getInfosOfUserReq = $bdd->prepare('SELECT id, nom, prenom FROM users WHERE nom = ? AND prenom = ? AND pseudo = ?');
+            $getInfosOfUserReq = $bdd->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE nom = ? AND prenom = ? AND pseudo = ?');
             $getInfosOfUserReq = execute(array($user_lastname, $user_firstname, $user_pseudo));
 
             //récuperer les données de l'user et les stockées dans un tableau
@@ -41,9 +42,7 @@ if(isset($_POST['validate'])){
             $_SESSION['pseudo'] = $userInfos['pseudo'];
 
             //redirige l'user vers la page d'acceuil
-            header("Location: index.php");
-            die();
-
+            header('location:index.php');
 
         }else{
             $errorMsg = "L'utilisateur existe déjà sur le site";
