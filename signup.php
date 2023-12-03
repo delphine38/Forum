@@ -30,6 +30,8 @@
         </div>
         
         <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+
+        
     </form>
 </body>
 
