@@ -41,8 +41,7 @@ if(isset($_POST['validate'])){
             $_SESSION['firstname'] = $userInfos['prenom'];
             $_SESSION['pseudo'] = $userInfos['pseudo'];
 
-            //redirige l'user vers la page d'acceuil
-            //header('location:../index.php');
+            
 
         }else{
             //$errorMsg = "L'utilisateur existe déjà sur le site";
