@@ -28,7 +28,7 @@ if(isset($_POST['validate'])){
 
             //récuperer les informations de user
             $getInfosOfUserReq = $bdd->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE nom = ? AND prenom = ? AND pseudo = ?');
-            $getInfosOfUserReq = execute(array($user_lastname, $user_firstname, $user_pseudo));
+            $getInfosOfUserReq -> execute(array($user_pseudo, $user_lastname, $user_firstname, ));
 
             //récuperer les données de l'user et les stockées dans un tableau
             $userInfos = $getInfosOfUserReq->fetch();
@@ -42,10 +42,12 @@ if(isset($_POST['validate'])){
             $_SESSION['pseudo'] = $userInfos['pseudo'];
 
             //redirige l'user vers la page d'acceuil
-            header('location:index.php');
+            //header('location:../index.php');
 
         }else{
-            $errorMsg = "L'utilisateur existe déjà sur le site";
+            //$errorMsg = "L'utilisateur existe déjà sur le site";
+            //redirige l'user vers la page d'acceuil
+            header('location:index.php');
         }
 
     }else{
