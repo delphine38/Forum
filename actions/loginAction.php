@@ -15,7 +15,7 @@ if(isset($_POST['validate'])){
 
         // on ne veut pas cripté le message de l'utilisateur avec "password_hash", car on ne veut pas l'insérer sur le site
         //on veut juste vérifier si le MDP qui à été saisi correspond au MDP cripté en bdd
-        $user_password = htmlspecialchars($_POST['password'], PASSWORD_DEFAULT);
+        $user_password = htmlspecialchars($_POST['password']);
 
         //verifier si l'user possede le user en bdd
         //SELECT tout de la table users dans pseudo
