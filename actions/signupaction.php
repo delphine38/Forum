@@ -34,7 +34,6 @@ if(isset($_POST['validate'])){
             $userInfos = $getInfosOfUserReq->fetch();
 
             //authentifier l'utilisateur dans des variables globales SESSIONS
-                
             $_SESSION['auth'] = true; 
             $_SESSION['id'] = $userInfos['id'];
             $_SESSION['lastname'] = $userInfos['nom'];

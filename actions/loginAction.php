@@ -33,6 +33,16 @@ if(isset($_POST['validate'])){
             //mais comment on récupére le mdp crypté ? 
             if(password_verify($user_password, $userInfos['mdp'])){
                 //ca correspond, on affiche le code
+                //authentifier l'utilisateur dans des variables globales SESSIONS
+                    $_SESSION['auth'] = true; 
+                    $_SESSION['id'] = $userInfos['id'];
+                    $_SESSION['lastname'] = $userInfos['nom'];
+                    $_SESSION['firstname'] = $userInfos['prenom'];
+                    $_SESSION['pseudo'] = $userInfos['pseudo'];
+
+                    //redirection vers page accueil
+                    header('Location: index.php');
+
             }else{
                 $errorMsg = "Votre mot de passe est incorrect";
    
