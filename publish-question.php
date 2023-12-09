@@ -1,4 +1,7 @@
-<?php require ('actions/loginAction.php');  ?>
+<?php 
+require ('actions/questions/publishQuestionAction.php');  
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +14,16 @@
     <form class="container" method="POST">
 
 
-    <?php if(isset($errorMsg)){echo '<p>' .$errorMsg.'</p>';}?>
+    <?php if(isset($errorMsg)){
+        echo '<p>' .$errorMsg.'</p>';
+        }elseif(isset($succesMsg)){
+            echo '<p>' .$succesMsg.'</p>';
+        }
+        
+        ?>
+
+
+    
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Titre de votre question</label>

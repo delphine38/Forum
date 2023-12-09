@@ -9,4 +9,4 @@ $_SESSION = [];
 session_destroy();
 
 //les rediriger vers login.php
-header('Location:../login.php');
+header('Location:../../login.php');
