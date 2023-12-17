@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="my-questions.php">Mes questions</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="actions/users/logoutAction.php">Se déconnecter</a>
+        </li>
     
       </ul>
       

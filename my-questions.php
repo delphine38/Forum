@@ -27,10 +27,11 @@ include('includes/navbar.php');
                     <p class="card-text">
                         <?php echo $question['description']; ?>
                     </p>
-                    <a href="#" class="btn btn-primary">Accéder à l'article</a>
-                    <a href="#" class="btn btn-warning">Modifier l'article</a>
+                    <a href="#" class="btn btn-primary">Accéder à la question</a>
+                    <a href="#" class="btn btn-warning">Modifier la question</a>
                 </div>
             </div>
+            <br>
 
         <?php
 

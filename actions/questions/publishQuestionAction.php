@@ -3,7 +3,7 @@
 require ('actions/database.php');
 
 if(isset($_POST['validate'])){
-    //si tout ces champs ne sont pas vie -> !empty = champs sont rempli
+    //si tout ces champs ne sont pas vide -> !empty = champs sont rempli
     if(!empty($_POST['title'])AND !empty($_POST['description']) AND !empty($_POST['content'])){
         //code
         $question_title = htmlspecialchars($_POST['title']);
@@ -13,6 +13,7 @@ if(isset($_POST['validate'])){
         $question_id_author = $_SESSION['id'];
         $question_pseudo_author = $_SESSION['pseudo'];
 
+        //insérer la question sur le site
         $insertQuestionInWebsite = $bdd->prepare('INSERT INTO questions(titre, description, contenu, id_auteur, pseudo_auteur, date_publication) VALUES(?,?,?,?,?,?) ');
         $insertQuestionInWebsite->execute(
             array(
