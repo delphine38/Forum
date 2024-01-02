@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require('actions/database.php');
 
@@ -21,7 +22,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             $question_title = $questionInfos['titre'];
             $question_description = $questionInfos['description'];
             $question_content = $questionInfos['contenu'];
-            $question_date = $questionInfos['date_publication'];
+            /*$question_date = $questionInfos['date_publication'];*/
 
             //cette fonction str_replace à pour but de remplace la variable par l'occurence souhaité
             /*str_replace(array|string $search,array|string $replace,string|array $subject,int &$count = null

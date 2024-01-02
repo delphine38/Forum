@@ -9,7 +9,7 @@ $Database = "forum";
 $ConnectDB = mysqli_connect($host, $userDB, $passDB, $Database);
 
 try{
-    session_start();
+    //session_start();
     $bdd = new PDO("mysql:host=" . $host . ";dbname=" . $Database, $userDB, $passDB);
     $bdd->setAttribute(PDO::ERRMODE_EXCEPTION, 'ATTR_ERRMODE');
 

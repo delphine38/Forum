@@ -1,4 +1,5 @@
 <?php
+session_start();
 //création de système de connexion
 require ('actions/database.php');
 

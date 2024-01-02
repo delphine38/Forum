@@ -1,4 +1,12 @@
-<?php require('actions/questions/myQuestionsAction.php'); ?>
+<?php
+session_start();
+
+require('actions/database.php');
+
+//require('actions/user/securityAction.php'); 
+require('actions/questions/myQuestionsAction.php'); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -27,8 +35,9 @@ include('includes/navbar.php');
                     <p class="card-text">
                         <?php echo $question['description']; ?>
                     </p>
-                    <a href="#" class="btn btn-primary">Accéder à la question</a>
-                    <a href="#" class="btn btn-warning">Modifier la question</a>
+                    <a href="edit-question.php?id=<?php $question['id']; ?>" class="btn btn-primary">Accéder à la question</a>
+                   <!-- <a href="#" class="btn btn-warning">Modifier la question</a>-->
+                   <a href="actions/questions/deleteQuestionAction.php?id=<?php $question['id']; ?>" class="btn btn-danger">Supprimer la question</a>
                 </div>
             </div>
             <br>

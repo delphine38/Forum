@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //on inclu le fichier database
 require('actions/database.php');
 
