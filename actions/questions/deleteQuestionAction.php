@@ -3,7 +3,7 @@
 session_start();
 //si la session n'est pas déclaré elle sera redirigé vers location : login.php
 if(!isset($_SESSION['auth'])){
-    header('Location: ../../login.php');
+    header('Location: login.php');
 }
 
 //require('../database.php');
@@ -20,7 +20,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                                         //SELECT toute les données DE la table question QUI POSSEDE l'id ?
         $checkIfQuestionExists = $bdd->prepare('SELECT id_auteur FROM questions WHERE id = ?');
         //execute et dans tableau, on passe en parametre la variable de l'i $idOfQuestion
-        $checkIfQuestionExists ->execute(array($idOfTheQuestion));
+        $checkIfQuestionExists->execute(array($idOfTheQuestion));
 
         //si la variable $check en appelant la method permet de compter le nombre de ligne
         //si rowcount compte sup à 0 = donc récupérer une donnée, donc question exist
@@ -33,7 +33,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 $deleteThisQuestion = $bdd->prepare('DELETE FROM questions WHERE id = ?');
                 $deleteThisQuestion->execute(array($idOfQuestion));
                 //une fois la question supprimer, redirection
-                header('Location: ../../my-questions.php');
+                header('Location: my-questions.php');
             
             }else{
                 echo "Cette question ne vous appartient pas, vous ne pouvez pas la supprimé";

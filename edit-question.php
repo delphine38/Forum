@@ -1,6 +1,7 @@
 <?php 
 require('actions/questions/getInfosOfEditedQuestionAction.php');
 require('actions/questions/editQuestionAction.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
