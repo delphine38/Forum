@@ -8,6 +8,7 @@ if(!isset($_SESSION['auth'])){
 
 //require('../database.php');
 require('../database.php');
+
 //require('actions/database.php');
 
 

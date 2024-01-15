@@ -35,9 +35,9 @@ include('includes/navbar.php');
                     <p class="card-text">
                         <?php echo $question['description']; ?>
                     </p>
-                    <a href="edit-question.php?id=<?php $question['id']; ?>" class="btn btn-primary">Accéder à cette question</a>
+                    <a href="edit-question.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Accéder à cette question</a>
                    <!-- <a href="#" class="btn btn-warning">Modifier la question</a>-->
-                   <a href="actions/questions/deleteQuestionAction.php?id=<?php $question['id']; ?>" class="btn btn-danger">Supprimer la question</a>
+                   <a href="actions/questions/deleteQuestionAction.php?id=<?php echo $question['id']; ?>" class="btn btn-danger">Supprimer la question</a>
                 </div>
             </div>
             <br>
