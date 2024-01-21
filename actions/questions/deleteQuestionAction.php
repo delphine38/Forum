@@ -31,7 +31,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             if($userInfo['id_auteur'] == $_SESSION['id']){
                 //requete pour supprimer la question
                 $deleteThisQuestion = $bdd->prepare('DELETE FROM questions WHERE id = ?');
-                $deleteThisQuestion->execute(array($idOfQuestion));
+                $deleteThisQuestion->execute(array($idOfTheQuestion));
                 //une fois la question supprimer, redirection
                header('Location: ../../my-questions.php');
 
