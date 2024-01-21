@@ -21,6 +21,7 @@ include('includes/navbar.php');
 
 <?php
 
+
     //$getAllQuestions
 
     //faire une bouche pour récupérer une par une chaque données
